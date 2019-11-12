@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ผู้ป่วย</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+    <h3>รายชื่อผู้ป่วย</h3>
+  <ion-row>
+    <ion-col>
+      <h5>ชื่อผู้ป่วย</h5>
+    </ion-col>
+
+    <ion-col>
+      <h5>รหัสผู้ใช้งาน</h5>
+    </ion-col>
+
+    <ion-col>
+      <h5>รหัสผ่านผู้ใช้งาน</h5>
+    </ion-col>
+
+    <ion-col>
+      <h5>ดูข้อมูล</h5>
+    </ion-col>
+
+    <ion-col>
+      <h5>แก้ไขข้อมูล</h5>
+    </ion-col>
+
+    <ion-col>
+      <h5>ลบข้อมูล</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-item text-center *ngFor="let item of getdata">
+    <ion-col>
+      <ion-label>{{ item.p_name }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>{{ item.p_user }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>{{ item.p_passwd }}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-button>
+        <ion-icon name="eye"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="warning">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-item>
+
+</ion-content>
