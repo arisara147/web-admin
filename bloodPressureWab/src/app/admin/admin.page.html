@@ -1,17 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>ผู้ป่วย</ion-title>
+    <ion-title>ผู้ดูแลระบบ</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content text-center>
-    <h3>รายชื่อผู้ป่วย</h3>
+  <h3>รายชื่อผู้ดูแลระบบ</h3>
   <ion-row>
     <ion-col>
-      <h5>ชื่อผู้ป่วย</h5>
+      <h5>ชื่อผู้ดูแลระบบ</h5>
     </ion-col>
 
     <ion-col>
@@ -37,34 +34,33 @@
 
   <ion-item text-center *ngFor="let item of getdata">
     <ion-col>
-      <ion-label>{{ item.p_name }}</ion-label>
+      <ion-label>{{ item.admin_name }}</ion-label>
     </ion-col>
 
     <ion-col>
-      <ion-label>{{ item.p_user }}</ion-label>
+      <ion-label>{{ item.admin_user }}</ion-label>
     </ion-col>
 
     <ion-col>
-      <ion-label>{{ item.p_passwd }}</ion-label>
+      <ion-label>{{ item.admin_passwd }}</ion-label>
     </ion-col>
 
     <ion-col>
-      <ion-button (click)="gotoDetail(item.p_id)">
+      <ion-button (click)="gotoDetail(item.admin_id)">
         <ion-icon name="eye"></ion-icon>
       </ion-button>
     </ion-col>
 
     <ion-col>
-      <ion-button color="warning" (click)="gotoEdit(item.p_id)">
+      <ion-button color="warning" (click)="gotoEdit(item.admin_id)">
         <ion-icon name="create"></ion-icon>
       </ion-button>
     </ion-col>
 
     <ion-col>
-      <ion-button (click)="deleteData(item.p_id)" color="danger">
+      <ion-button color="danger" (click)="delAdmin(item.admin_id)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
     </ion-col>
   </ion-item>
-
 </ion-content>

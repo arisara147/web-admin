@@ -1,35 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { CallapiService } from '../service/callapi.service';
-import { AlertController, ActionSheetController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-doctor',
-  templateUrl: './doctor.page.html',
-  styleUrls: ['./doctor.page.scss'],
+  selector: 'app-admin',
+  templateUrl: './admin.page.html',
+  styleUrls: ['./admin.page.scss'],
 })
-export class DoctorPage implements OnInit {
+export class AdminPage implements OnInit {
 
   getdata: any;
   status: string;
   dataDel = {
-    "dr_id":null
+    "admin_id":null
   };
 
   constructor(public callapi:CallapiService, public router:Router) { }
 
   ngOnInit() {
-    this.getAllDoctor();
+    this.getAllAdmin();
   }
 
   ionViewDidEnter(){
-    this.getAllDoctor();
+    this.getAllAdmin();
   }
 
-  getAllDoctor(){
+  getAllAdmin(){
     let dataFrom = new FormData();
     dataFrom.append("_Data", JSON.stringify(""));
-    dataFrom.append("Function_Name", "getallDoctor");
+    dataFrom.append("Function_Name", "getallAdmin");
     this.callapi.webadmin(dataFrom).then((result)=>{
       this.getdata = result;
       console.log(result);
@@ -43,30 +42,24 @@ export class DoctorPage implements OnInit {
 
   gotoDetail(id) {
     this.status = "1";
-    this.router.navigate(['/doctor-detail', { _id: id, _status: this.status }]);
+    this.router.navigate(['/admin-detail', { _id: id, _status: this.status }]);
   }
 
   gotoEdit(id) {
     this.status = "2";
-    this.router.navigate(['/doctor-detail', { _id: id, _status: this.status }]);
+    this.router.navigate(['/admin-detail', { _id: id, _status: this.status }]);
   }
 
-  delDoctor(id){
-    this.dataDel.dr_id = id;
-    console.log(this.dataDel.dr_id);  
+  delAdmin(id){
+    this.dataDel.admin_id = id;
+    console.log(this.dataDel.admin_id);  
       let dataFrom = new FormData();
       dataFrom.append("_Data", JSON.stringify(this.dataDel));
-      dataFrom.append("Function_Name", "deleteDoctor");
+      dataFrom.append("Function_Name", "deleteAdmin");
       this.callapi.webadmin(dataFrom).then((it) =>{
         console.log(it);
-        this.getAllDoctor();
+        this.getAllAdmin();
       });
   }
-
-  // async presentAlertPrompt(id) {
-  //   this.doctorFilter = this.datadoctor.find(it => it.dr_id == id);
-  //   console.log(this.doctorFilter);
-   
-  // }
 
 }

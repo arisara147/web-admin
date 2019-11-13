@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { CallapiService } from '../service/callapi.service';
 
 @Component({
-  selector: 'app-nurse-detail',
-  templateUrl: './nurse-detail.page.html',
-  styleUrls: ['./nurse-detail.page.scss'],
+  selector: 'app-admin-detail',
+  templateUrl: './admin-detail.page.html',
+  styleUrls: ['./admin-detail.page.scss'],
 })
-export class NurseDetailPage implements OnInit {
+export class AdminDetailPage implements OnInit {
 
   getStatus: any;
   getdata = {
@@ -15,7 +15,7 @@ export class NurseDetailPage implements OnInit {
   };
   getid: any;
   statusMode: boolean;
-  getnurse:any;
+  getadmin:any;
   isReadonly:boolean;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService) { 
@@ -55,18 +55,18 @@ export class NurseDetailPage implements OnInit {
     console.log(data);
     let dataFrom = new FormData();
     dataFrom.append("_Data", JSON.stringify(data));
-    dataFrom.append("Function_Name", "getnurseById");
+    dataFrom.append("Function_Name", "getadminById");
     this.callapi.webadmin(dataFrom).then((it) => {
-      this.getnurse = it[0];
-      console.log(this.getnurse);
+      this.getadmin = it[0];
+      console.log(this.getadmin);
       
     });
   }
 
   editdata(){
     let dataFrom = new FormData();
-    dataFrom.append("_Data", JSON.stringify(this.getnurse));
-    dataFrom.append("Function_Name", "updateNurse");
+    dataFrom.append("_Data", JSON.stringify(this.getadmin));
+    dataFrom.append("Function_Name", "updateAdmin");
     this.callapi.webadmin(dataFrom).then((it) => {
       this.change();
     });

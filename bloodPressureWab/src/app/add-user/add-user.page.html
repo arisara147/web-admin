@@ -1,9 +1,87 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>addUser</ion-title>
+    <ion-title>เพิ่มข้อมูลผู้ใช้งาน</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col size="3"></ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>เลือกสิทธิ์</ion-label>
+        <ion-select (ionChange)="checkValue($event)" [(ngModel)]="getsection" [interfaceOptions]="customPopoverOptions"
+          interface="alert" placeholder="โปรดเลือกสิทธิ์">
+          <ion-select-option value="doctor">แพทย์</ion-select-option>
+          <ion-select-option value="nurse">พยาบาล</ion-select-option>
+          <ion-select-option value="patient">ผู้ป่วย</ion-select-option>
+          <ion-select-option value="admin">Admin</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3"></ion-col>
+  </ion-row>
+
+  <div *ngIf="getsection != null">
+    <ion-item>
+      <ion-label>คำนำหน้า : </ion-label>
+      <ion-input [(ngModel)]="addData.article"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ชื่อผู้ใช้งาน : </ion-label>
+      <ion-input [(ngModel)]="addData.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>รหัสผู้ใช้งาน : </ion-label>
+      <ion-input [(ngModel)]="addData.user"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>รหัสผ่านผู้ใช้งาน : </ion-label>
+      <ion-input [(ngModel)]="addData.passwd"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>เพศ : </ion-label>
+      <ion-input [(ngModel)]="addData.sex"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>เบอร์โทร : </ion-label>
+      <ion-input [(ngModel)]="addData.tell"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ที่อยู่ : </ion-label>
+      <ion-input [(ngModel)]="addData.address"></ion-input>
+    </ion-item>
+  </div>
+
+  <div *ngIf="checkstatus == 2 && getsection != null">
+    <ion-item>
+      <ion-label>วันที่เกิด : </ion-label>
+      <ion-datetime [(ngModel)]="addData.birthdate" displayFormat="DD/MM/YYYY" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>น้ำหนัก : </ion-label>
+      <ion-input [(ngModel)]="addData.weight"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ส่วนสูง : </ion-label>
+      <ion-input [(ngModel)]="addData.height"></ion-input>
+    </ion-item>
+  </div>
+  <ion-row text-center *ngIf="getsection != null">
+      <ion-col size="3"></ion-col>
+      <ion-col>       
+          <ion-button (click)="donedata()">บันทึกข้อมูล</ion-button> 
+          <ion-button (click)="splitDate()">Log</ion-button>   
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
 
 </ion-content>

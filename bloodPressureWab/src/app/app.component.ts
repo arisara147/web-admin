@@ -30,6 +30,16 @@ export class AppComponent {
       title: 'ผู้ป่วย',
       url: '/patient',
       icon: 'list'
+    },
+    {
+      title: 'ผู้ดูแลระบบ',
+      url: '/admin',
+      icon: 'list'
+    },
+    {
+      title: 'เพิ่มผู้ใช้งาน',
+      url: '/add-user',
+      icon: 'list'
     }
   ];
 

@@ -1,9 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>doctorDetail</ion-title>
+    <ion-title>รายละเอียดแพทย์</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content text-center>
 
-</ion-content>
+    <div *ngIf="getdoctor != null">
+        <h3 *ngIf="getStatus == 1">ข้อมูลแพทย์</h3>
+      <h3 *ngIf="getStatus == 2">แก้ไขข้อมูลแพทย์</h3>
+      <ion-item>
+        <ion-label>คำนำหน้า :</ion-label>
+        <ion-input [readonly]="isReadonly" [(ngModel)]="getdoctor.dr_article"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>ชื่อแพทย์ :</ion-label>
+        <ion-input [readonly]="isReadonly" [(ngModel)]="getdoctor.dr_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>รหัสผู้ใช้งาน :</ion-label>
+        <ion-input [readonly]="isReadonly" [(ngModel)]="getdoctor.dr_user"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>รหัสผ่านผู้ใช้งาน :</ion-label>
+        <ion-input [readonly]="isReadonly" [(ngModel)]="getdoctor.dr_passwd"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>เพศ :</ion-label>
+        <ion-input [readonly]="isReadonly" [(ngModel)]="getdoctor.dr_sex"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>เบอร์โทร :</ion-label>
+        <ion-input [readonly]="isReadonly" [(ngModel)]="getdoctor.dr_tell"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>ที่อยู่ :</ion-label>
+        <ion-input [readonly]="isReadonly" [(ngModel)]="getdoctor.dr_address"></ion-input>
+      </ion-item>
+      <br><br>
+  
+      <div *ngIf="getStatus == 1">
+        <ion-button (click)="change()">แก้ไขข้อมูล</ion-button>
+      </div>
+  
+      <div *ngIf="getStatus == 2">
+        <ion-button (click)="editdata()">บันทึกข้อมูล</ion-button>
+      </div>
+  
+    </div>
+  
+  
+  </ion-content>

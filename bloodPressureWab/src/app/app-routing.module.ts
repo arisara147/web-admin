@@ -22,7 +22,9 @@ const routes: Routes = [
   { path: 'add-user', loadChildren: './add-user/add-user.module#AddUserPageModule' },
   { path: 'doctor-detail', loadChildren: './doctor-detail/doctor-detail.module#DoctorDetailPageModule' },
   { path: 'patient-detail', loadChildren: './patient-detail/patient-detail.module#PatientDetailPageModule' },
-  { path: 'nurse-detail', loadChildren: './nurse-detail/nurse-detail.module#NurseDetailPageModule' }
+  { path: 'nurse-detail', loadChildren: './nurse-detail/nurse-detail.module#NurseDetailPageModule' },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminPageModule' },
+  { path: 'admin-detail', loadChildren: './admin-detail/admin-detail.module#AdminDetailPageModule' }
 ];
 
 @NgModule({

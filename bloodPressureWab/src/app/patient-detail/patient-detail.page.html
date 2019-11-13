@@ -1,9 +1,65 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>patientDetail</ion-title>
+    <ion-title>รายละเอียดผู้ป่วย</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content text-center>
+
+  <div *ngIf="getpatient != null">
+      <h3 *ngIf="getStatus == 1">ข้อมูลผู้ป่วย</h3>
+    <h3 *ngIf="getStatus == 2">แก้ไขข้อมูลผู้ป่วย</h3>
+    <ion-item>
+      <ion-label>คำนำหน้า :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_article"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>ชื่อผู้ป่วย :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>รหัสผู้ใช้งาน :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>รหัสผ่านผู้ใช้งาน :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_passwd"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>วันที่เกิด :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_birthDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>น้ำหนัก :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_weight"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>ส่วนสูง :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_height"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>เพศ :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_sex"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>เบอร์โทร :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_tell"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>ที่อยู่ :</ion-label>
+      <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_address"></ion-input>
+    </ion-item>
+    <br><br>
+
+    <div *ngIf="getStatus == 1">
+      <ion-button (click)="change()">แก้ไขข้อมูล</ion-button>
+    </div>
+
+    <div *ngIf="getStatus == 2">
+      <ion-button (click)="editdata()">บันทึกข้อมูล</ion-button>
+    </div>
+
+  </div>
+
 
 </ion-content>
