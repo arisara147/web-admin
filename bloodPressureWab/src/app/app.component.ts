@@ -19,27 +19,27 @@ export class AppComponent {
     {
       title: 'แพทย์',
       url: '/doctor',
-      icon: 'list'
+      icon: 'medkit'
     },
     {
       title: 'พยาบาล',
       url: '/nurse',
-      icon: 'list'
+      icon: 'medkit'
     },
     {
       title: 'ผู้ป่วย',
       url: '/patient',
-      icon: 'list'
+      icon: 'contact'
     },
     {
       title: 'ผู้ดูแลระบบ',
       url: '/admin',
-      icon: 'list'
+      icon: 'person'
     },
     {
       title: 'เพิ่มผู้ใช้งาน',
       url: '/add-user',
-      icon: 'list'
+      icon: 'person-add'
     }
   ];
 
