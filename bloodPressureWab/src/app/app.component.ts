@@ -40,6 +40,11 @@ export class AppComponent {
       title: 'เพิ่มผู้ใช้งาน',
       url: '/add-user',
       icon: 'list'
+    },
+    {
+      title: 'เพิ่มข่าว',
+      url: '/add-news',
+      icon: 'list'
     }
   ];
 
