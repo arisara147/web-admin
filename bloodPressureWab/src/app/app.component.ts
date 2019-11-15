@@ -45,6 +45,11 @@ export class AppComponent {
       title: 'เพิ่มข่าว',
       url: '/add-news',
       icon: 'list'
+    },
+    {
+      title: 'Logout',
+      url: '/',
+      icon: 'log-out'
     }
   ];
 

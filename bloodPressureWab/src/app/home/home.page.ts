@@ -8,22 +8,22 @@ import { CallapiService } from '../service/callapi.service';
 })
 export class HomePage {
 
-  getData:any;
+  getData: any;
 
-  constructor(public callapi:CallapiService) {}
+  constructor(public callapi: CallapiService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getAllLogin();
   }
 
-  getAllLogin(){
+  getAllLogin() {
     let dataFrom = new FormData();
     dataFrom.append("_Data", JSON.stringify(""));
     dataFrom.append("Function_Name", "getallLogin");
-    this.callapi.webadmin(dataFrom).then((result)=>{
+    this.callapi.webadmin(dataFrom).then((result) => {
       this.getData = result;
       console.log(result);
-      console.log(this.getData); 
+      console.log(this.getData);
     });
   }
 

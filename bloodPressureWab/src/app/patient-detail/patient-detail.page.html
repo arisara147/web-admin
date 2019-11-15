@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="bar">
     <ion-title>รายละเอียดผู้ป่วย</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -18,7 +18,7 @@
       <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>รหัสผู้ใช้งาน :</ion-label>
+      <ion-label>Username :</ion-label>
       <ion-input [readonly]="isReadonly" [(ngModel)]="getpatient.p_user"></ion-input>
     </ion-item>
     <ion-item>

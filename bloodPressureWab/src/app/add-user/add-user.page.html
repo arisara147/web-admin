@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="bar">
     <ion-title>เพิ่มข้อมูลผู้ใช้งาน</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,12 +29,12 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>ชื่อผู้ใช้งาน : </ion-label>
+      <ion-label>ชื่อ- สกุล : </ion-label>
       <ion-input [(ngModel)]="addData.name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label>รหัสผู้ใช้งาน : </ion-label>
+      <ion-label>Username : </ion-label>
       <ion-input [(ngModel)]="addData.user"></ion-input>
     </ion-item>
 
@@ -79,9 +79,8 @@
       <ion-col size="3"></ion-col>
       <ion-col>       
           <ion-button (click)="donedata()">บันทึกข้อมูล</ion-button> 
-          <ion-button (click)="splitDate()">Log</ion-button>   
       </ion-col>
       <ion-col size="3"></ion-col>
     </ion-row>
-
+   
 </ion-content>

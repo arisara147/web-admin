@@ -1,9 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+  <ion-toolbar class="bar">
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-   
+<ion-content class="padding">
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <img src="https://image.flaticon.com/icons/png/512/149/149071.png">
+      </div>
+      <h3>Welcome to Blood Pressure Admin!</h3>
+    </div>
+    <div class="body">
+
+      <ion-item>
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-input placeholder="Username" type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="lock"></ion-icon>
+        <ion-input placeholder="password" type="number" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <ion-button size="large" expand="block" (click)="login()">Sign in</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
